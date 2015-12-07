@@ -23,3 +23,30 @@ E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\bin\W
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\obj\x86\Debug\Game1.exe
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\obj\x86\Debug\Game1.pdb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.exe
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.pdb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\grass.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\path.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Game1.exe
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Game1.pdb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache

@@ -16,12 +16,13 @@ namespace Game1
 
         public Game1()
         {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = level.Width * 32;
             graphics.PreferredBackBufferHeight = level.Height * 32;
             graphics.ApplyChanges();
             IsMouseVisible = true;
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+           
         }
 
         /// <summary>
