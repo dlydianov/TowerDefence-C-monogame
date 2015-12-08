@@ -6,6 +6,28 @@ namespace Game1
 {
     public class Level
     {
+        private Queue<Vector2> waypoints = new Queue<Vector2>();
+
+        public Level()
+        {
+            waypoints.Enqueue(new Vector2(2, 0) * 32);
+            waypoints.Enqueue(new Vector2(2, 1) * 32);
+            waypoints.Enqueue(new Vector2(3, 1) * 32);
+            waypoints.Enqueue(new Vector2(3, 2) * 32);
+            waypoints.Enqueue(new Vector2(4, 2) * 32);
+            waypoints.Enqueue(new Vector2(4, 4) * 32);
+            waypoints.Enqueue(new Vector2(3, 4) * 32);
+            waypoints.Enqueue(new Vector2(3, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 7) * 32);
+            waypoints.Enqueue(new Vector2(7, 7) * 32);
+        }
+
+        public Queue<Vector2> Waypoints
+        {
+            get { return waypoints; }
+        }
+
         private int[,] map = new int[,]
         {
             {0, 0, 1, 0, 0, 0, 0, 0,},
