@@ -10,6 +10,7 @@ namespace Game1
     public class Game1 : Game
     {
         Level level = new Level();
+        Enemy enemy1;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -50,7 +51,11 @@ namespace Game1
             level.AddTexture(grass);
             level.AddTexture(path);
             // Create a new SpriteBatch, which can be used to draw textures.
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
+            enemy1 = new Enemy(enemyTexture, Vector2.Zero, 100, 10, 0.5f);
 
             // TODO: use this.Content to load your game content here
         }
@@ -74,7 +79,8 @@ namespace Game1
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            enemy1.CurrentHealth -= 1;
+            enemy1.Update(gameTime);
 
             base.Update(gameTime);
         }
