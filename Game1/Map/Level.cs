@@ -28,7 +28,7 @@ namespace Game1
             get { return waypoints; }
         }
 
-        private int[,] map = new int[,]
+        public int[,] map = new int[,]
         {
             {0, 0, 1, 0, 0, 0, 0, 0,},
             {0, 0, 1, 1, 0, 0, 0, 0,},
@@ -71,6 +71,14 @@ namespace Game1
                         x * 32, y * 32, 32, 32), Color.White);
                 }
             }
+        }
+
+        public int GetIndex(int cellX, int cellY)
+        {
+            if (cellX < 0 || cellX > Width || cellY < 0 || cellY > Height)
+                return 0;
+
+            return map[cellX, cellY];
         }
     }
 }

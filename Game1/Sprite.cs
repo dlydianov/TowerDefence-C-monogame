@@ -57,6 +57,9 @@ namespace Game1
                 rotation, origin, 1.0f, SpriteEffects.None, 0);
         }
 
-        
+        public Vector2 Position
+        {
+            get { return position; }
+        }
     }
 }
