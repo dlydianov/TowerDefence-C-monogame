@@ -9,7 +9,7 @@ using Game1.Towers;
 
 namespace TowerDefenseTutorial
 {
-    public class Player
+     public  class Player
     {
         private int money = 50;
         private int lives = 30;

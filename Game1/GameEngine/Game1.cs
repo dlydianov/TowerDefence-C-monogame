@@ -1,72 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using Game1.Towers;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Storage;
-using Game1;
+using TowerDefenseTutorial;
 
-namespace TowerDefenseTutorial
+namespace Game1
 {
-    public class Game1 : Microsoft.Xna.Framework.Game
+    /// <summary>
+    /// This is the main type for your game.
+    /// </summary>
+    public class Game1 : Game
     {
+        Level level = new Level();
+        Enemy enemy1;
+        private Player player;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        Level level = new Level();
-
-        Enemy enemy1;
-
-        Player player;
-
-        public Level Level
-        {
-            get
-            {
-                return level;
-            }
-
-            set
-            {
-                level = value;
-            }
-        }
-
-        public Enemy Enemy1
-        {
-            get
-            {
-                return enemy1;
-            }
-
-            set
-            {
-                enemy1 = value;
-            }
-        }
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
-            graphics.PreferredBackBufferWidth = Level.Width * 32;
-            graphics.PreferredBackBufferHeight = Level.Height * 32;
+            graphics.PreferredBackBufferWidth = level.Width * 32;
+            graphics.PreferredBackBufferHeight = level.Height * 32;
             graphics.ApplyChanges();
-
             IsMouseVisible = true;
+
         }
 
+        /// <summary>
+        /// Allows the game to perform any initialization it needs to before starting to run.
+        /// This is where it can query for any required services and load any non-graphic
+        /// related content.  Calling base.Initialize will enumerate through any components
+        /// and initialize them as well.
+        /// </summary>
         protected override void Initialize()
         {
+            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
 
+        /// <summary>
+        /// LoadContent will be called once per game and is the place to load
+        /// all of your content.
+        /// </summary>
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -74,43 +54,59 @@ namespace TowerDefenseTutorial
             Texture2D grass = Content.Load<Texture2D>("grass");
             Texture2D path = Content.Load<Texture2D>("path");
 
-            Level.AddTexture(grass);
-            Level.AddTexture(path);
+            level.AddTexture(grass);
+            level.AddTexture(path);
 
             Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
 
-            Enemy1 = new Enemy(enemyTexture, Vector2.Zero, 100, 10, 0.5f);
-            Enemy1.SetWaypoints(Level.Waypoints);
+            enemy1 = new Enemy(enemyTexture, Vector2.Zero, 100, 10, 0.5f);
+            enemy1.SetWaypoints(level.Waypoints);
 
             Texture2D towerTexture = Content.Load<Texture2D>("arrow tower");
-            player = new Player(Level, towerTexture);
+            player = new Player(level, towerTexture);
+
+
+            // TODO: use this.Content to load your game content here
         }
 
+        /// <summary>
+        /// UnloadContent will be called once per game and is the place to unload
+        /// game-specific content.
+        /// </summary>
         protected override void UnloadContent()
         {
-
+            // TODO: Unload any non ContentManager content here
         }
 
+        /// <summary>
+        /// Allows the game to run logic such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            Enemy1.Update(gameTime);
+            enemy1.Update(gameTime);
 
             List<Enemy> enemies = new List<Enemy>();
-            enemies.Add(Enemy1);
+            enemies.Add(enemy1);
 
             player.Update(gameTime, enemies);
 
             base.Update(gameTime);
         }
 
+        /// <summary>
+        /// This is called when the game should draw itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
 
-            Level.Draw(spriteBatch);
-            Enemy1.Draw(spriteBatch);
+            level.Draw(spriteBatch);
+            enemy1.Draw(spriteBatch);
             player.Draw(spriteBatch);
 
             spriteBatch.End();
