@@ -52,3 +52,4 @@ C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Gam
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\enemy.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\arrow tower.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\bullet.xnb

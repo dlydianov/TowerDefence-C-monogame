@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Graphics;
-using Game1;
+﻿using System.Collections.Generic;
 using Game1.Towers;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
-namespace TowerDefenseTutorial
+namespace Game1.Player
 {
-     public  class Player
+    public class Player
     {
         private int money = 50;
         private int lives = 30;
 
         private Texture2D towerTexture;
+        private Texture2D bulletTexture;
 
         private List<Tower> towers = new List<Tower>();
 
@@ -38,10 +36,25 @@ namespace TowerDefenseTutorial
             get { return lives; }
         }
 
-        public Player(Level level, Texture2D towerTexture)
+        public Texture2D BulletTexture
+        {
+            get
+            {
+                return bulletTexture;
+            }
+
+            set
+            {
+                bulletTexture = value;
+            }
+        }
+
+        public Player(Level level, Texture2D towerTexture, Texture2D bulletTexture)
         {
             this.level = level;
+
             this.towerTexture = towerTexture;
+            this.BulletTexture = bulletTexture;
         }
 
         private bool IsCellClear()
@@ -79,7 +92,9 @@ namespace TowerDefenseTutorial
             {
                 if (IsCellClear())
                 {
-                    Tower tower = new Tower(towerTexture, new Vector2(tileX, tileY));
+                    ArrowTower tower = new ArrowTower(towerTexture,
+                        BulletTexture, new Vector2(tileX, tileY));
+
                     towers.Add(tower);
                 }
             }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Game1.Interface;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
-    public class Enemy :Sprite,IIsDead,ISetWaypoints
+    public class Enemy : Sprite, IIsDead, ISetWaypoints, IEnemy
     {
 
         private Queue<Vector2> waypoints = new Queue<Vector2>();

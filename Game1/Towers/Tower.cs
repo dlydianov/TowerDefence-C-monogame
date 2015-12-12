@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Towers
 {
-    public class Tower :Sprite
+    public class Tower : Sprite
     {
         protected int cost; // How much will the tower cost to make
         protected int damage; // The damage done to enemy's
@@ -15,6 +13,11 @@ namespace Game1.Towers
         protected float radius; // How far the tower can shoot
 
         protected Enemy target;
+
+        protected float bulletTimer; // How long ago was a bullet fired
+        protected Texture2D bulletTexture;
+
+        protected List<Bullet.Bullet> bulletList = new List<Bullet.Bullet>();
 
         public int Cost
         {
@@ -35,10 +38,10 @@ namespace Game1.Towers
             get { return target; }
         }
 
-        public Tower(Texture2D texture, Vector2 position)
+        public Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, position)
         {
-            radius = 1000;
+            this.bulletTexture = bulletTexture;
         }
 
         protected void FaceTarget()
@@ -47,6 +50,11 @@ namespace Game1.Towers
             direction.Normalize();
 
             rotation = (float)Math.Atan2(-direction.X, direction.Y);
+        }
+
+        public bool IsInRange(Vector2 position)
+        {
+            return Vector2.Distance(center, position) <= radius;
         }
 
         public void GetClosestEnemy(List<Enemy> enemies)
@@ -68,8 +76,26 @@ namespace Game1.Towers
         {
             base.Update(gameTime);
 
+            bulletTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             if (target != null)
+            {
                 FaceTarget();
+
+                if (!IsInRange(target.Center) || target.IsDead)
+                {
+                    target = null;
+                    bulletTimer = 0;
+                }
+            }
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+
+            foreach (Bullet.Bullet bullet in bulletList)
+                bullet.Draw(spriteBatch);
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using Game1.Towers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using TowerDefenseTutorial;
 
 namespace Game1
 {
@@ -13,8 +10,9 @@ namespace Game1
     public class Game1 : Game
     {
         Level level = new Level();
-        Enemy enemy1;
-        private Player player;
+        //Enemy enemy1;
+        Wave wave;
+        private Player.Player player;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -59,11 +57,13 @@ namespace Game1
 
             Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
 
-            enemy1 = new Enemy(enemyTexture, Vector2.Zero, 100, 10, 0.5f);
-            enemy1.SetWaypoints(level.Waypoints);
+            wave = new Wave(0, 10, level, enemyTexture);
+            wave.Start();
 
             Texture2D towerTexture = Content.Load<Texture2D>("arrow tower");
-            player = new Player(level, towerTexture);
+            Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
+
+            player = new Player.Player(level, towerTexture, bulletTexture);
 
 
             // TODO: use this.Content to load your game content here
@@ -85,12 +85,11 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            enemy1.Update(gameTime);
+            wave.Update(gameTime);
+            player.Update(gameTime, wave.Enemies);
 
-            List<Enemy> enemies = new List<Enemy>();
-            enemies.Add(enemy1);
 
-            player.Update(gameTime, enemies);
+         
 
             base.Update(gameTime);
         }
@@ -106,7 +105,7 @@ namespace Game1
             spriteBatch.Begin();
 
             level.Draw(spriteBatch);
-            enemy1.Draw(spriteBatch);
+            wave.Draw(spriteBatch);
             player.Draw(spriteBatch);
 
             spriteBatch.End();
