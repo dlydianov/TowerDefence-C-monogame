@@ -1,0 +1,16 @@
+﻿<!--
+Modify this string to change the font that will be imported.
+-->
+<FontName>Arial</FontName>
+ 
+<!--
+Size is a float value, measured in points. Modify this value to change
+the size of the font.
+-->
+<Size>9</Size>
+ 
+<!--
+Style controls the style of the font. Valid entries are "Regular", "Bold", "Italic",
+and "Bold, Italic", and are case sensitive.
+-->
+<Style>Bold</Style>
