@@ -44,6 +44,9 @@
     <Compile Include="Enemy\Wave.cs" />
     <Compile Include="Enemy\WaveManager.cs" />
     <Compile Include="GameEngine\Game1.cs" />
+    <Compile Include="GUI\Button.cs" />
+    <Compile Include="GUI\ButtonsStatus.cs" />
+    <Compile Include="GUI\Toolbar.cs" />
     <Compile Include="Interface\IIsDead.cs" />
     <Compile Include="Interface\ISetWaypoints.cs" />
     <Compile Include="Map\Level.cs" />

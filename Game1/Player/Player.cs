@@ -8,23 +8,34 @@ namespace Game1.Player
 {
     public class Player
     {
+        // Player state.
         private int money = 50;
         private int lives = 30;
 
+        // The texture used to draw our tower.
         private Texture2D towerTexture;
+        // The texture used to draw bullets.
         private Texture2D bulletTexture;
 
+        // A list of the players towers
         private List<Tower> towers = new List<Tower>();
 
-        private MouseState mouseState; // Mouse state for the current frame
-        private MouseState oldState; // Mouse state for the previous frame
+        // Mouse state for the current frame.
+        private MouseState mouseState;
+        // Mouse state for the previous frame.
+        private MouseState oldState;
 
+        // Tower placement.
         private int cellX;
         private int cellY;
 
         private int tileX;
         private int tileY;
 
+        // The type of tower to add.
+        private string newTowerType;
+
+        // A reference to the level.
         private Level level;
 
         public int Money
@@ -36,40 +47,42 @@ namespace Game1.Player
             get { return lives; }
         }
 
-        public Texture2D BulletTexture
+        public string NewTowerType
         {
-            get
-            {
-                return bulletTexture;
-            }
-
-            set
-            {
-                bulletTexture = value;
-            }
+            set { newTowerType = value; }
         }
 
+        /// <summary>
+        /// Construct a new player.
+        /// </summary>
         public Player(Level level, Texture2D towerTexture, Texture2D bulletTexture)
         {
             this.level = level;
 
             this.towerTexture = towerTexture;
-            this.BulletTexture = bulletTexture;
+            this.bulletTexture = bulletTexture;
         }
 
+        /// <summary>
+        /// Returns wether the current cell is clear
+        /// </summary>
         private bool IsCellClear()
         {
-            bool inBounds = cellX >= 0 && cellY >= 0 && // Make sure tower is within limits
+            // Make sure tower is within limits
+            bool inBounds = cellX >= 0 && cellY >= 0 &&
                 cellX < level.Width && cellY < level.Height;
 
             bool spaceClear = true;
 
-            foreach (Tower tower in towers) // Check that there is no tower here
+            // Check that there is no tower in this spot
+            foreach (Tower tower in towers)
             {
                 spaceClear = (tower.Position != new Vector2(tileX, tileY));
 
                 if (!spaceClear)
+                {
                     break;
+                }
             }
 
             bool onPath = (level.GetIndex(cellX, cellY) != 1);
@@ -77,6 +90,37 @@ namespace Game1.Player
             return inBounds && spaceClear && onPath; // If both checks are true return true
         }
 
+        /// <summary>
+        /// Adds a tower to the player's collection.
+        /// </summary>
+        public void AddTower()
+        {
+            Tower towerToAdd = null;
+
+            switch (newTowerType)
+            {
+                case "Arrow Tower":
+                    {
+                        towerToAdd = new ArrowTower(towerTexture,
+                            bulletTexture, new Vector2(tileX, tileY));
+                        break;
+                    }
+            }
+
+            // Only add the tower if there is a space and if the player can afford it.
+            if (IsCellClear() == true && towerToAdd.Cost <= money)
+            {
+                towers.Add(towerToAdd);
+                money -= towerToAdd.Cost;
+
+                // Reset the newTowerType field.
+                newTowerType = string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Updates the player.
+        /// </summary>
         public void Update(GameTime gameTime, List<Enemy.Enemy> enemies)
         {
             mouseState = Mouse.GetState();
@@ -90,12 +134,9 @@ namespace Game1.Player
             if (mouseState.LeftButton == ButtonState.Released
                 && oldState.LeftButton == ButtonState.Pressed)
             {
-                if (IsCellClear())
+                if (string.IsNullOrEmpty(newTowerType) == false)
                 {
-                    ArrowTower tower = new ArrowTower(towerTexture,
-                        BulletTexture, new Vector2(tileX, tileY));
-
-                    towers.Add(tower);
+                    AddTower();
                 }
             }
 

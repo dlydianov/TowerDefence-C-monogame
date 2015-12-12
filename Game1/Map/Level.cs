@@ -6,7 +6,34 @@ namespace Game1
 {
     public class Level
     {
+        private List<Texture2D> tileTextures = new List<Texture2D>();
         private Queue<Vector2> waypoints = new Queue<Vector2>();
+
+        int[,] map = new int[,]
+        {
+            {0,0,1,0,0,0,0,0,},
+            {0,0,1,1,0,0,0,0,},
+            {0,0,0,1,1,0,0,0,},
+            {0,0,0,0,1,0,0,0,},
+            {0,0,0,1,1,0,0,0,},
+            {0,0,1,1,0,0,0,0,},
+            {0,0,1,0,0,0,0,0,},
+            {0,0,1,1,1,1,1,1,},
+        };
+
+        public Queue<Vector2> Waypoints
+        {
+            get { return waypoints; }
+        }
+
+        public int Width
+        {
+            get { return map.GetLength(1); }
+        }
+        public int Height
+        {
+            get { return map.GetLength(0); }
+        }
 
         public Level()
         {
@@ -23,32 +50,13 @@ namespace Game1
             waypoints.Enqueue(new Vector2(7, 7) * 32);
         }
 
-        public Queue<Vector2> Waypoints
+        public int GetIndex(int cellX, int cellY)
         {
-            get { return waypoints; }
-        }
+            // It needed to be Width - 1 and Height - 1.
+            if (cellX < 0 || cellX > Width - 1 || cellY < 0 || cellY > Height - 1)
+                return 0;
 
-        public int[,] map = new int[,]
-        {
-            {0, 0, 1, 0, 0, 0, 0, 0,},
-            {0, 0, 1, 1, 0, 0, 0, 0,},
-            {0, 0, 0, 1, 1, 0, 0, 0,},
-            {0, 0, 0, 0, 1, 0, 0, 0,},
-            {0, 0, 0, 1, 1, 0, 0, 0,},
-            {0, 0, 1, 1, 0, 0, 0, 0,},
-            {0, 0, 1, 0, 0, 0, 0, 0,},
-            {0, 0, 1, 1, 1, 1, 1, 1,}
-        };
-        private List<Texture2D> tileTextures = new List<Texture2D>();
-
-        public int Width
-        {
-            get { return map.GetLength(1); }
-        }
-
-        public int Height
-        {
-            get { return map.GetLength(0); }
+            return map[cellY, cellX];
         }
 
         public void AddTexture(Texture2D texture)
@@ -63,22 +71,16 @@ namespace Game1
                 for (int y = 0; y < Height; y++)
                 {
                     int textureIndex = map[y, x];
+
                     if (textureIndex == -1)
                         continue;
 
                     Texture2D texture = tileTextures[textureIndex];
-                    batch.Draw(texture, new Rectangle(
-                        x * 32, y * 32, 32, 32), Color.White);
+
+                    batch.Draw(texture, new Rectangle(x * 32, y * 32, 32, 32), Color.White);
                 }
             }
         }
-
-        public int GetIndex(int cellX, int cellY)
-        {
-            if (cellX < 0 || cellX > Width || cellY < 0 || cellY > Height)
-                return 0;
-
-            return map[cellX, cellY];
-        }
     }
+
 }

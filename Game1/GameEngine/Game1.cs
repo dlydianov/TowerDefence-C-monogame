@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game1.Enemy;
+using Game1.GUI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,16 +15,20 @@ namespace Game1
         Level level = new Level();
         WaveManager waveManager;
         Player.Player player;
-
+        Toolbar toolBar;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Button arrowButton;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            // The width of the level in pixels
             graphics.PreferredBackBufferWidth = level.Width * 32;
-            graphics.PreferredBackBufferHeight = level.Height * 32;
+            // The height of the toolbar + the height of the level in pixels
+            graphics.PreferredBackBufferHeight = 32 + level.Height * 32;
+
             graphics.ApplyChanges();
             IsMouseVisible = true;
 
@@ -49,6 +55,11 @@ namespace Game1
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            Texture2D topBar = Content.Load<Texture2D>("tool bar");
+            SpriteFont font = Content.Load<SpriteFont>("Arial");
+
+            toolBar = new Toolbar(topBar, font, new Vector2(0, level.Height * 32));
+
             Texture2D grass = Content.Load<Texture2D>("grass");
             Texture2D path = Content.Load<Texture2D>("path");
 
@@ -64,8 +75,18 @@ namespace Game1
 
             player = new Player.Player(level, towerTexture, bulletTexture);
 
+            // The "Normal" texture for the arrow button.
+            Texture2D arrowNormal = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow button");
+            // The "MouseOver" texture for the arrow button.
+            Texture2D arrowHover = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow hover");
+            // The "Pressed" texture for the arrow button.
+            Texture2D arrowPressed = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow pressed");
 
-            // TODO: use this.Content to load your game content here
+            // Initialize the arrow button.
+            arrowButton = new Button(arrowNormal, arrowHover,
+                arrowPressed, new Vector2(0, level.Height * 32));
+
+            arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
         }
 
         /// <summary>
@@ -76,6 +97,11 @@ namespace Game1
         {
             // TODO: Unload any non ContentManager content here
         }
+        private void arrowButton_Clicked(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Arrow Tower";
+        }
+
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -86,6 +112,9 @@ namespace Game1
         {
             waveManager.Update(gameTime);
             player.Update(gameTime, waveManager.Enemies);
+
+            //Update the arrow button.
+            arrowButton.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -101,9 +130,13 @@ namespace Game1
             spriteBatch.Begin();
 
             level.Draw(spriteBatch);
+            player.Draw(spriteBatch);
             waveManager.Draw(spriteBatch);
 
-            player.Draw(spriteBatch);
+            // Draw the tool bar first,
+            toolBar.Draw(spriteBatch, player);
+            // and then our buttons.
+            arrowButton.Draw(spriteBatch);
 
             spriteBatch.End();
 

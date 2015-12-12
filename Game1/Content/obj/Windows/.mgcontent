@@ -9,5 +9,10 @@
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/enemy.png</File>
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/arrow tower.png</File>
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/bullet.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/Arial.spritefont</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/tool bar.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow button.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow hover.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow pressed.png</File>
   </SourceFiles>
 </SourceFileCollection>

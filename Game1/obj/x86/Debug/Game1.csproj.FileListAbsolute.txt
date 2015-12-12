@@ -53,3 +53,8 @@ C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Gam
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\enemy.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\arrow tower.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\bullet.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\Arial.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\tool bar.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow button.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow hover.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow pressed.xnb
