@@ -77,7 +77,7 @@ namespace Game1.Player
             return inBounds && spaceClear && onPath; // If both checks are true return true
         }
 
-        public void Update(GameTime gameTime, List<Enemy> enemies)
+        public void Update(GameTime gameTime, List<Enemy.Enemy> enemies)
         {
             mouseState = Mouse.GetState();
 

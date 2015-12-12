@@ -3,7 +3,7 @@ using Game1.Interface;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game1
+namespace Game1.Enemy
 {
     public class Enemy : Sprite, IIsDead, ISetWaypoints, IEnemy
     {

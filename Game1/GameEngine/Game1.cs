@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game1.Enemy;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -10,9 +11,8 @@ namespace Game1
     public class Game1 : Game
     {
         Level level = new Level();
-        //Enemy enemy1;
-        Wave wave;
-        private Player.Player player;
+        WaveManager waveManager;
+        Player.Player player;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -57,8 +57,7 @@ namespace Game1
 
             Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
 
-            wave = new Wave(0, 10, level, enemyTexture);
-            wave.Start();
+            waveManager = new WaveManager(level, 24, enemyTexture);
 
             Texture2D towerTexture = Content.Load<Texture2D>("arrow tower");
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
@@ -85,11 +84,8 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            wave.Update(gameTime);
-            player.Update(gameTime, wave.Enemies);
-
-
-         
+            waveManager.Update(gameTime);
+            player.Update(gameTime, waveManager.Enemies);
 
             base.Update(gameTime);
         }
@@ -105,7 +101,8 @@ namespace Game1
             spriteBatch.Begin();
 
             level.Draw(spriteBatch);
-            wave.Draw(spriteBatch);
+            waveManager.Draw(spriteBatch);
+
             player.Draw(spriteBatch);
 
             spriteBatch.End();

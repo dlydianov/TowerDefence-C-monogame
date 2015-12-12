@@ -12,7 +12,7 @@ namespace Game1.Towers
 
         protected float radius; // How far the tower can shoot
 
-        protected Enemy target;
+        protected Enemy.Enemy target;
 
         protected float bulletTimer; // How long ago was a bullet fired
         protected Texture2D bulletTexture;
@@ -33,7 +33,7 @@ namespace Game1.Towers
             get { return radius; }
         }
 
-        public Enemy Target
+        public Enemy.Enemy Target
         {
             get { return target; }
         }
@@ -57,12 +57,12 @@ namespace Game1.Towers
             return Vector2.Distance(center, position) <= radius;
         }
 
-        public void GetClosestEnemy(List<Enemy> enemies)
+        public void GetClosestEnemy(List<Enemy.Enemy> enemies)
         {
             target = null;
             float smallestRange = radius;
 
-            foreach (Enemy enemy in enemies)
+            foreach (Enemy.Enemy enemy in enemies)
             {
                 if (Vector2.Distance(center, enemy.Center) < smallestRange)
                 {
