@@ -9,11 +9,11 @@ namespace Game1.Player
     public class Player
     {
         // Player state.
-        private int money = 50;
+        private int money = 80;
         private int lives = 30;
 
-        // The texture used to draw our tower.
-        private Texture2D towerTexture;
+        // The textures used to draw our tower.
+        private Texture2D[] towerTextures;
         // The texture used to draw bullets.
         private Texture2D bulletTexture;
 
@@ -55,11 +55,11 @@ namespace Game1.Player
         /// <summary>
         /// Construct a new player.
         /// </summary>
-        public Player(Level level, Texture2D towerTexture, Texture2D bulletTexture)
+        public Player(Level level, Texture2D[] towerTextures, Texture2D bulletTexture)
         {
             this.level = level;
 
-            this.towerTexture = towerTexture;
+            this.towerTextures = towerTextures;
             this.bulletTexture = bulletTexture;
         }
 
@@ -101,7 +101,13 @@ namespace Game1.Player
             {
                 case "Arrow Tower":
                     {
-                        towerToAdd = new ArrowTower(towerTexture,
+                        towerToAdd = new ArrowTower(towerTextures[0],
+                            bulletTexture, new Vector2(tileX, tileY));
+                        break;
+                    }
+                case "Spike Tower":
+                    {
+                        towerToAdd = new SpikeTower(towerTextures[1],
                             bulletTexture, new Vector2(tileX, tileY));
                         break;
                     }
@@ -142,7 +148,8 @@ namespace Game1.Player
 
             foreach (Tower tower in towers)
             {
-                if (tower.Target == null)
+                // Make sure the tower has no targets.
+                if (tower.HasTarget == false)
                 {
                     tower.GetClosestEnemy(enemies);
                 }

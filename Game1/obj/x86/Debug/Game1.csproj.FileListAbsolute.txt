@@ -25,8 +25,6 @@ E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\obj\x
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-Game\Game1\obj\x86\Debug\Game1.pdb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.exe
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.pdb
-C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\grass.xnb
-C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\path.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Game1.exe
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Game1.pdb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\MonoGame.Framework.dll
@@ -50,11 +48,17 @@ C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Gam
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
-C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\enemy.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\Arial.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\arrow tower.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\bullet.xnb
-C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\Arial.xnb
-C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\tool bar.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\enemy.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\grass.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow button.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow hover.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Arrow Tower\arrow pressed.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\path.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\spike tower.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\tool bar.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike button.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike hover.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike pressed.xnb

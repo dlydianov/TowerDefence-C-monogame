@@ -39,7 +39,7 @@ namespace Game1.Enemy
 
             for (int i = 0; i < numberOfWaves; i++)
             {
-                int initialNumerOfEnemies = 6;
+                int initialNumerOfEnemies = 10;
                 int numberModifier = (i / 6) + 1;
 
                 Wave wave = new Wave(i, initialNumerOfEnemies *

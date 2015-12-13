@@ -38,6 +38,12 @@ namespace Game1.Towers
             get { return target; }
         }
 
+        public virtual bool HasTarget
+        {
+            // Check if the tower has a target.
+            get { return target != null; }
+        }
+
         public Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, position)
         {
@@ -57,7 +63,7 @@ namespace Game1.Towers
             return Vector2.Distance(center, position) <= radius;
         }
 
-        public void GetClosestEnemy(List<Enemy.Enemy> enemies)
+        public virtual void GetClosestEnemy(List<Enemy.Enemy> enemies)
         {
             target = null;
             float smallestRange = radius;

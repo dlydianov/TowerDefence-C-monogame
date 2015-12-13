@@ -1,11 +1,15 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Towers
 {
-    public class ArrowTower : Tower
+    public class BombTower : Tower
     {
-        public ArrowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
+        public BombTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, bulletTexture, position)
         {
             this.damage = 15; // Set the damage

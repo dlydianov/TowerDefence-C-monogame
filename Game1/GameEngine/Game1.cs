@@ -12,13 +12,19 @@ namespace Game1
     /// </summary>
     public class Game1 : Game
     {
-        Level level = new Level();
-        WaveManager waveManager;
-        Player.Player player;
-        Toolbar toolBar;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Level level = new Level();
+
+        WaveManager waveManager;
+
+        Player.Player player;
+
         Button arrowButton;
+        Button spikeButton;
+
+        Toolbar toolBar;
 
         public Game1()
         {
@@ -70,10 +76,15 @@ namespace Game1
 
             waveManager = new WaveManager(level, 24, enemyTexture);
 
-            Texture2D towerTexture = Content.Load<Texture2D>("arrow tower");
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
 
-            player = new Player.Player(level, towerTexture, bulletTexture);
+            Texture2D[] towerTextures = new Texture2D[]
+            {
+                Content.Load<Texture2D>("arrow tower"),
+                Content.Load<Texture2D>("spike tower")
+            };
+
+            player = new Player.Player(level, towerTextures, bulletTexture);
 
             // The "Normal" texture for the arrow button.
             Texture2D arrowNormal = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow button");
@@ -82,11 +93,23 @@ namespace Game1
             // The "Pressed" texture for the arrow button.
             Texture2D arrowPressed = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow pressed");
 
+            // The "Normal" texture for the spike button.
+            Texture2D spikeNormal = Content.Load<Texture2D>("GUI\\Spike Tower\\spike button");
+            // The "MouseOver" texture for the spike button.
+            Texture2D spikeHover = Content.Load<Texture2D>("GUI\\Spike Tower\\spike hover");
+            // The "Pressed" texture for the spike button.
+            Texture2D spikePressed = Content.Load<Texture2D>("GUI\\Spike Tower\\spike pressed");
+
             // Initialize the arrow button.
             arrowButton = new Button(arrowNormal, arrowHover,
                 arrowPressed, new Vector2(0, level.Height * 32));
 
+            // Initialize the spike button.
+            spikeButton = new Button(spikeNormal, spikeHover,
+                spikePressed, new Vector2(32, level.Height * 32));
+
             arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
+            spikeButton.Clicked += new EventHandler(spikeButton_Clicked);
         }
 
         /// <summary>
@@ -100,6 +123,10 @@ namespace Game1
         private void arrowButton_Clicked(object sender, EventArgs e)
         {
             player.NewTowerType = "Arrow Tower";
+        }
+        private void spikeButton_Clicked(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Spike Tower";
         }
 
 
@@ -115,6 +142,8 @@ namespace Game1
 
             //Update the arrow button.
             arrowButton.Update(gameTime);
+            //Update the spike button.
+            spikeButton.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -137,6 +166,7 @@ namespace Game1
             toolBar.Draw(spriteBatch, player);
             // and then our buttons.
             arrowButton.Draw(spriteBatch);
+            spikeButton.Draw(spriteBatch);
 
             spriteBatch.End();
 
