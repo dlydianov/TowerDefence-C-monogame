@@ -68,7 +68,6 @@ C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Gam
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Slow Tower\slow pressed.xnb
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.exe
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.pdb
-E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\Arial.xnb
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\arrow tower.xnb
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\bullet.xnb
 E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\enemy.xnb
@@ -152,3 +151,4 @@ C:\Users\Magi\Desktop\TeamWork\TowerDefence-C-monogame\Game1\bin\Windows\Debug\S
 C:\Users\Magi\Desktop\TeamWork\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Magi\Desktop\TeamWork\TowerDefence-C-monogame\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Magi\Desktop\TeamWork\TowerDefence-C-monogame\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
+E:\SoftUni\Object-Oriented-Programming\TeamProject\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\Cooper Black.xnb

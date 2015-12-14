@@ -65,7 +65,7 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Texture2D topBar = Content.Load<Texture2D>("tool bar");
-            SpriteFont font = Content.Load<SpriteFont>("Arial");
+            SpriteFont font = Content.Load<SpriteFont>("Cooper Black");
 
             toolBar = new Toolbar(topBar, font, new Vector2(0, level.Height * 32));
 
