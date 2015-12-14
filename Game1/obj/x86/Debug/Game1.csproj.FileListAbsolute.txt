@@ -62,3 +62,7 @@ C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Gam
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike button.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike hover.xnb
 C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Spike Tower\spike pressed.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\slow tower.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Slow Tower\slow button.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Slow Tower\slow hover.xnb
+C:\Users\user1\Documents\Visual Studio 2015\Projects\TowerDefence-C-monogame\Game1\bin\Windows\Debug\Content\GUI\Slow Tower\slow pressed.xnb

@@ -9,7 +9,7 @@ namespace Game1.Towers
             : base(texture, bulletTexture, position)
         {
             this.damage = 15; // Set the damage
-            this.cost = 15;   // Set the initial cost
+            this.cost = 15; // Set the initial cost
 
             this.radius = 80; // Set the radius
         }
@@ -21,7 +21,7 @@ namespace Game1.Towers
             if (bulletTimer >= 0.75f && target != null)
             {
                 Bullet.Bullet bullet = new Bullet.Bullet(bulletTexture, Vector2.Subtract(center,
-                    new Vector2(bulletTexture.Width / 2)), rotation, 6, damage);
+                    new Vector2(bulletTexture.Width/2)), rotation, 6, damage);
 
                 bulletList.Add(bullet);
                 bulletTimer = 0;

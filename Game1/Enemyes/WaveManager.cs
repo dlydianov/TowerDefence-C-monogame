@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game1.Enemyes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -15,7 +16,7 @@ namespace Game1.Enemy
 
         private bool waveFinished = false; // Is the current wave over?
 
-        private Level level; // A reference to our level class
+        private Level level; // A reference to our level class.
 
         public Wave CurrentWave // Get the wave at the front of the queue
         {
@@ -30,7 +31,7 @@ namespace Game1.Enemy
             get { return CurrentWave.RoundNumber + 1; }
         }
 
-        public WaveManager(Level level, int numberOfWaves, Texture2D enemyTexture)
+        public WaveManager(Player.Player player, Level level, int numberOfWaves, Texture2D enemyTexture)
         {
             this.numberOfWaves = numberOfWaves;
             this.enemyTexture = enemyTexture;
@@ -39,11 +40,12 @@ namespace Game1.Enemy
 
             for (int i = 0; i < numberOfWaves; i++)
             {
-                int initialNumerOfEnemies = 10;
+                int initialNumerOfEnemies = 6;
                 int numberModifier = (i / 6) + 1;
 
+                // Pass the reference to the player, to the wave class.
                 Wave wave = new Wave(i, initialNumerOfEnemies *
-                    numberModifier, level, enemyTexture);
+                    numberModifier, player, level, enemyTexture);
 
                 waves.Enqueue(wave);
             }

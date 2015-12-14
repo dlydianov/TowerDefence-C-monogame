@@ -23,6 +23,7 @@ namespace Game1
 
         Button arrowButton;
         Button spikeButton;
+        Button slowButton;
 
         Toolbar toolBar;
 
@@ -60,6 +61,7 @@ namespace Game1
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Texture2D topBar = Content.Load<Texture2D>("tool bar");
             SpriteFont font = Content.Load<SpriteFont>("Arial");
@@ -72,19 +74,19 @@ namespace Game1
             level.AddTexture(grass);
             level.AddTexture(path);
 
-            Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
-
-            waveManager = new WaveManager(level, 24, enemyTexture);
-
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
 
             Texture2D[] towerTextures = new Texture2D[]
             {
                 Content.Load<Texture2D>("arrow tower"),
-                Content.Load<Texture2D>("spike tower")
+                Content.Load<Texture2D>("spike tower"),
+                Content.Load<Texture2D>("slow tower"),
             };
 
             player = new Player.Player(level, towerTextures, bulletTexture);
+
+            Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
+            waveManager = new WaveManager(player, level, 24, enemyTexture);
 
             // The "Normal" texture for the arrow button.
             Texture2D arrowNormal = Content.Load<Texture2D>("GUI\\Arrow Tower\\arrow button");
@@ -100,6 +102,13 @@ namespace Game1
             // The "Pressed" texture for the spike button.
             Texture2D spikePressed = Content.Load<Texture2D>("GUI\\Spike Tower\\spike pressed");
 
+            // The "Normal" texture for the slow button.
+            Texture2D slowNormal = Content.Load<Texture2D>("GUI\\Slow Tower\\slow button");
+            // The "MouseOver" texture for the slow button.
+            Texture2D slowHover = Content.Load<Texture2D>("GUI\\Slow Tower\\slow hover");
+            // The "Pressed" texture for the slow button.
+            Texture2D slowPressed = Content.Load<Texture2D>("GUI\\Slow Tower\\slow pressed");
+
             // Initialize the arrow button.
             arrowButton = new Button(arrowNormal, arrowHover,
                 arrowPressed, new Vector2(0, level.Height * 32));
@@ -108,8 +117,17 @@ namespace Game1
             spikeButton = new Button(spikeNormal, spikeHover,
                 spikePressed, new Vector2(32, level.Height * 32));
 
-            arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
-            spikeButton.Clicked += new EventHandler(spikeButton_Clicked);
+            // Initialize the slow button.
+            slowButton = new Button(slowNormal, slowHover,
+                slowPressed, new Vector2(32 * 2, level.Height * 32));
+
+            //arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
+            //spikeButton.Clicked += new EventHandler(spikeButton_Clicked);
+            //slowButton.Clicked += new EventHandler(slowButton_Clicked);
+
+            arrowButton.OnPress += new EventHandler(arrowButton_OnPress);
+            spikeButton.OnPress += new EventHandler(spikeButton_OnPress);
+            slowButton.OnPress += new EventHandler(slowButton_OnPress);
         }
 
         /// <summary>
@@ -128,7 +146,21 @@ namespace Game1
         {
             player.NewTowerType = "Spike Tower";
         }
-
+        private void arrowButton_OnPress(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Arrow Tower";
+            player.NewTowerIndex = 0;
+        }
+        private void spikeButton_OnPress(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Spike Tower";
+            player.NewTowerIndex = 1;
+        }
+        private void slowButton_OnPress(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Slow Tower";
+            player.NewTowerIndex = 2;
+        }
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -144,6 +176,8 @@ namespace Game1
             arrowButton.Update(gameTime);
             //Update the spike button.
             spikeButton.Update(gameTime);
+            //Update the slow button.
+            slowButton.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -167,6 +201,9 @@ namespace Game1
             // and then our buttons.
             arrowButton.Draw(spriteBatch);
             spikeButton.Draw(spriteBatch);
+            slowButton.Draw(spriteBatch);
+
+            player.DrawPreview(spriteBatch);
 
             spriteBatch.End();
 

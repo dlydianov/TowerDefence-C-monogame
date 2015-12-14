@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
-namespace Game1.Enemy
-{
+using Game1.Player;
+namespace Game1.Enemyes
+{ 
+    
     public class Wave
     {
         private int numOfEnemies; // Number of enemies to spawn
@@ -15,11 +16,12 @@ namespace Game1.Enemy
         private bool enemyAtEnd; // Has an enemy reached the end of the path?
         private bool spawningEnemies; // Are we still spawing enemies?
 
-        private Level level; // A reference of the level
+        private Player.Player player; // A reference to the player.
+        private Level level; // A reference of the level.
 
         private Texture2D enemyTexture; // A texture for the enemies
 
-        private List<Enemy> enemies = new List<Enemy>(); // List of enemies
+        private List<Enemy.Enemy> enemies = new List<Enemy.Enemy>(); // List of enemies
 
         public bool RoundOver
         {
@@ -38,24 +40,26 @@ namespace Game1.Enemy
             get { return enemyAtEnd; }
             set { enemyAtEnd = value; }
         }
-        public List<Enemy> Enemies
+        public List<Enemy.Enemy> Enemies
         {
             get { return enemies; }
         }
 
         public Wave(int waveNumber, int numOfEnemies,
-            Level level, Texture2D enemyTexture)
+            Player.Player player, Level level, Texture2D enemyTexture)
         {
             this.waveNumber = waveNumber;
             this.numOfEnemies = numOfEnemies;
 
+            this.player = player;
             this.level = level;
+
             this.enemyTexture = enemyTexture;
         }
 
         private void AddEnemy()
         {
-            Enemy enemy = new Enemy(enemyTexture,
+            Enemy.Enemy enemy = new Enemy.Enemy(enemyTexture,
                 level.Waypoints.Peek(), 50, 1, 0.5f);
 
             enemy.SetWaypoints(level.Waypoints);
@@ -86,7 +90,7 @@ namespace Game1.Enemy
 
             for (int i = 0; i < enemies.Count; i++)
             {
-                Enemy enemy = enemies[i];
+                Enemy.Enemy enemy = enemies[i];
                 enemy.Update(gameTime);
 
                 if (enemy.IsDead)
@@ -94,6 +98,12 @@ namespace Game1.Enemy
                     if (enemy.CurrentHealth > 0) // Enemy is at the end
                     {
                         enemyAtEnd = true;
+                        player.Lives -= 1;
+                    }
+
+                    else
+                    {
+                        player.Money += enemy.BountyGiven;
                     }
 
                     enemies.Remove(enemy);
@@ -104,7 +114,7 @@ namespace Game1.Enemy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Enemy enemy in enemies)
+            foreach (Enemy.Enemy enemy in enemies)
                 enemy.Draw(spriteBatch);
         }
     }

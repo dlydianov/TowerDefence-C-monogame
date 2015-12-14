@@ -9,7 +9,7 @@ namespace Game1.Player
     public class Player
     {
         // Player state.
-        private int money = 80;
+        private int money = 50;
         private int lives = 30;
 
         // The textures used to draw our tower.
@@ -34,6 +34,8 @@ namespace Game1.Player
 
         // The type of tower to add.
         private string newTowerType;
+        // The index of the new towers texture.
+        private int newTowerIndex;
 
         // A reference to the level.
         private Level level;
@@ -41,15 +43,21 @@ namespace Game1.Player
         public int Money
         {
             get { return money; }
+            set { money = value; }
         }
         public int Lives
         {
             get { return lives; }
+            set { lives = value; }
         }
 
         public string NewTowerType
         {
             set { newTowerType = value; }
+        }
+        public int NewTowerIndex
+        {
+            set { newTowerIndex = value; }
         }
 
         /// <summary>
@@ -111,6 +119,12 @@ namespace Game1.Player
                             bulletTexture, new Vector2(tileX, tileY));
                         break;
                     }
+                case "Slow Tower":
+                    {
+                        towerToAdd = new SlowTower(towerTextures[2],
+                            bulletTexture, new Vector2(tileX, tileY));
+                        break;
+                    }
             }
 
             // Only add the tower if there is a space and if the player can afford it.
@@ -120,6 +134,11 @@ namespace Game1.Player
                 money -= towerToAdd.Cost;
 
                 // Reset the newTowerType field.
+                newTowerType = string.Empty;
+            }
+
+            else
+            {
                 newTowerType = string.Empty;
             }
         }
@@ -165,6 +184,24 @@ namespace Game1.Player
             foreach (Tower tower in towers)
             {
                 tower.Draw(spriteBatch);
+            }
+        }
+
+        public void DrawPreview(SpriteBatch spriteBatch)
+        {
+            // Draw the tower preview.
+            if (string.IsNullOrEmpty(newTowerType) == false)
+            {
+                int cellX = (int)(mouseState.X / 32); // Convert the position of the mouse
+                int cellY = (int)(mouseState.Y / 32); // from array space to level space
+
+                int tileX = cellX * 32; // Convert from array space to level space
+                int tileY = cellY * 32; // Convert from array space to level space
+
+                Texture2D previewTexture = towerTextures[newTowerIndex];
+
+                spriteBatch.Draw(previewTexture, new Rectangle(tileX, tileY,
+                    previewTexture.Width, previewTexture.Height), Color.White);
             }
         }
     }

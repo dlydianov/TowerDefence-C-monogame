@@ -7,6 +7,7 @@ namespace Game1.GUI
 {
     public  class Button :Sprite
     {
+
         // Store the MouseState of the last frame.
         private MouseState previousState;
 
@@ -22,6 +23,8 @@ namespace Game1.GUI
 
         // Gets fired when the button is pressed.
         public event EventHandler Clicked;
+        // Gets fired when the button is held down.
+        public event EventHandler OnPress;
 
         /// <summary>
         /// Constructs a new button.
@@ -72,6 +75,12 @@ namespace Game1.GUI
                 {
                     // Update the button state.
                     state = ButtonsStatus.Pressed;
+
+                    if (OnPress != null)
+                    {
+                        // Fire the OnPress event.
+                        OnPress(this, EventArgs.Empty);
+                    }
                 }
             }
 

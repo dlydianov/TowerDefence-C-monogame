@@ -18,5 +18,9 @@
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike button.png</File>
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike hover.png</File>
     <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike pressed.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/slow tower.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow button.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow hover.png</File>
+    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow pressed.png</File>
   </SourceFiles>
 </SourceFileCollection>
