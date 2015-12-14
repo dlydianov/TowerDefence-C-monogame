@@ -21,7 +21,7 @@ namespace Game1.GUI
 
             this.position = position;
             // Offset the text to the bottom right corner
-            textPosition = new Vector2(130, position.Y + 10);
+            textPosition = new Vector2(400, position.Y + 10);
         }
 
         public void Draw(SpriteBatch spriteBatch, Player.Player player)

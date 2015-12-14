@@ -11,14 +11,17 @@ namespace Game1
 
         int[,] map = new int[,]
         {
-            {0,0,1,0,0,0,0,0,},
-            {0,0,1,1,0,0,0,0,},
-            {0,0,0,1,1,0,0,0,},
-            {0,0,0,0,1,0,0,0,},
-            {0,0,0,1,1,0,0,0,},
-            {0,0,1,1,0,0,0,0,},
-            {0,0,1,0,0,0,0,0,},
-            {0,0,1,1,1,1,1,1,},
+            {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0},
+            {0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0},
+            {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,1,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0},
+            {0,0,1,1,1,1,1,0,0,0,1,1,1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
         };
 
         public Queue<Vector2> Waypoints
@@ -40,14 +43,47 @@ namespace Game1
             waypoints.Enqueue(new Vector2(2, 0) * 32);
             waypoints.Enqueue(new Vector2(2, 1) * 32);
             waypoints.Enqueue(new Vector2(3, 1) * 32);
-            waypoints.Enqueue(new Vector2(3, 2) * 32);
-            waypoints.Enqueue(new Vector2(4, 2) * 32);
+            waypoints.Enqueue(new Vector2(4, 1) * 32);
+            waypoints.Enqueue(new Vector2(5, 1) * 32);
+            waypoints.Enqueue(new Vector2(6, 1) * 32);
+            waypoints.Enqueue(new Vector2(7, 1) * 32);
+            waypoints.Enqueue(new Vector2(8, 1) * 32);
+            waypoints.Enqueue(new Vector2(9, 1) * 32);
+            waypoints.Enqueue(new Vector2(10, 1) * 32);
+            waypoints.Enqueue(new Vector2(10, 2) * 32);
+            waypoints.Enqueue(new Vector2(10, 3) * 32);
+            waypoints.Enqueue(new Vector2(10, 4) * 32);
+            waypoints.Enqueue(new Vector2(9, 4) * 32);
+            waypoints.Enqueue(new Vector2(8, 4) * 32);
+            waypoints.Enqueue(new Vector2(7, 4) * 32);
+            waypoints.Enqueue(new Vector2(6, 4) * 32);
+            waypoints.Enqueue(new Vector2(5, 4) * 32);
             waypoints.Enqueue(new Vector2(4, 4) * 32);
             waypoints.Enqueue(new Vector2(3, 4) * 32);
-            waypoints.Enqueue(new Vector2(3, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 4) * 32);
             waypoints.Enqueue(new Vector2(2, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 6) * 32);
             waypoints.Enqueue(new Vector2(2, 7) * 32);
-            waypoints.Enqueue(new Vector2(7, 7) * 32);
+            waypoints.Enqueue(new Vector2(3, 7) * 32);
+            waypoints.Enqueue(new Vector2(4, 7) * 32);
+            waypoints.Enqueue(new Vector2(5, 7) * 32);
+            waypoints.Enqueue(new Vector2(6, 7) * 32);
+            waypoints.Enqueue(new Vector2(6, 6) * 32);
+            waypoints.Enqueue(new Vector2(7, 6) * 32);
+            waypoints.Enqueue(new Vector2(8, 6) * 32);
+            waypoints.Enqueue(new Vector2(9, 6) * 32);
+            waypoints.Enqueue(new Vector2(10, 6) * 32);
+            waypoints.Enqueue(new Vector2(10, 7) * 32);
+            waypoints.Enqueue(new Vector2(11, 7) * 32);
+            waypoints.Enqueue(new Vector2(12, 7) * 32);
+            waypoints.Enqueue(new Vector2(12, 8) * 32);
+            waypoints.Enqueue(new Vector2(12, 9) * 32);
+            waypoints.Enqueue(new Vector2(11, 9) * 32);
+            waypoints.Enqueue(new Vector2(10, 9) * 32);
+            waypoints.Enqueue(new Vector2(9, 9) * 32);
+            waypoints.Enqueue(new Vector2(8, 9) * 32);
+            waypoints.Enqueue(new Vector2(7, 9) * 32);
+            waypoints.Enqueue(new Vector2(7, 10) * 32);
         }
 
         public int GetIndex(int cellX, int cellY)

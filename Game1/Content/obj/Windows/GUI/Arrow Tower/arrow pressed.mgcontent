@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow pressed.png</SourceFile>
-  <SourceTime>2010-12-17T18:04:10+02:00</SourceTime>
-  <DestFile>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Arrow Tower/arrow pressed.xnb</DestFile>
-  <DestTime>2015-12-12T15:58:02.5122916+02:00</DestTime>
+  <SourceFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow pressed.png</SourceFile>
+  <SourceTime>2015-12-14T14:39:02.565734+02:00</SourceTime>
+  <DestFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Arrow Tower/arrow pressed.xnb</DestFile>
+  <DestTime>2015-12-14T14:40:25.6409042+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
