@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Game1.Enemy;
+using Game1.BulletMain;
+using Game1.Enemyes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,7 +14,7 @@ namespace Game1.Towers
         // A list of directions that the tower can shoot in.
         private Vector2[] directions = new Vector2[8];
         // All the enimes that are in range of the tower.
-        private List<Enemy.Enemy> targets = new List<Enemy.Enemy>();
+        private List<Enemy> targets = new List<Enemy>();
 
         public override bool HasTarget
         {
@@ -46,13 +47,13 @@ namespace Game1.Towers
             };
         }
 
-        public override void GetClosestEnemy(List<Enemy.Enemy> enemies)
+        public override void GetClosestEnemy(List<Enemy> enemies)
         {
             // Do a fresh search for targets.
             targets.Clear();
 
             // Loop over all the enemies.
-            foreach (Enemy.Enemy enemy in enemies)
+            foreach (Enemy enemy in enemies)
             {
                 // Check wether this enemy is in shooting distance.
                 if (IsInRange(enemy.Center))
@@ -74,7 +75,7 @@ namespace Game1.Towers
                 for (int i = 0; i < directions.Length; i++)
                 {
                     // create a new bullet that moves in that direction.
-                    Bullet.Bullet bullet = new Bullet.Bullet(bulletTexture, Vector2.Subtract(center,
+                    Bullet bullet = new Bullet(bulletTexture, Vector2.Subtract(center,
                         new Vector2(bulletTexture.Width / 2)), directions[i], 6, damage);
 
                     bulletList.Add(bullet);
@@ -86,7 +87,7 @@ namespace Game1.Towers
             // Loop through all the bullets.
             for (int i = 0; i < bulletList.Count; i++)
             {
-                Bullet.Bullet bullet = bulletList[i];
+                Bullet bullet = bulletList[i];
                 bullet.Update(gameTime);
 
                 // Kill the bullet when it is out of range.

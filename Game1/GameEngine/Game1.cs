@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Game1.Enemy;
+using Game1.Enemyes;
 using Game1.GUI;
+using Game1.Players;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -19,7 +20,7 @@ namespace Game1
 
         WaveManager waveManager;
 
-        Player.Player player;
+        Player player;
 
         Button arrowButton;
         Button spikeButton;
@@ -83,7 +84,7 @@ namespace Game1
                 Content.Load<Texture2D>("slow tower"),
             };
 
-            player = new Player.Player(level, towerTextures, bulletTexture);
+            player = new Player(level, towerTextures, bulletTexture);
 
             Texture2D enemyTexture = Content.Load<Texture2D>("enemy");
             waveManager = new WaveManager(player, level, 24, enemyTexture);

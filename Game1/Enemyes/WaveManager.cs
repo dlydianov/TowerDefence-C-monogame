@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Game1.Enemyes;
+using Game1.Players;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game1.Enemy
+namespace Game1.Enemyes
 {
     public class WaveManager
     {
@@ -31,7 +32,7 @@ namespace Game1.Enemy
             get { return CurrentWave.RoundNumber + 1; }
         }
 
-        public WaveManager(Player.Player player, Level level, int numberOfWaves, Texture2D enemyTexture)
+        public WaveManager(Player player, Level level, int numberOfWaves, Texture2D enemyTexture)
         {
             this.numberOfWaves = numberOfWaves;
             this.enemyTexture = enemyTexture;

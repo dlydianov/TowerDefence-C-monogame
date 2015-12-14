@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Players;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.GUI
@@ -24,7 +25,7 @@ namespace Game1.GUI
             textPosition = new Vector2(400, position.Y + 10);
         }
 
-        public void Draw(SpriteBatch spriteBatch, Player.Player player)
+        public void Draw(SpriteBatch spriteBatch, Player player)
         {
             spriteBatch.Draw(texture, position, Color.White);
 

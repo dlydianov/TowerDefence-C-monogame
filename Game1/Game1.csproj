@@ -38,7 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Bullet\Bullet.cs" />
+    <Compile Include="BulletMain\Bullet.cs" />
     <Compile Include="Enemyes\Enemy.cs" />
     <Compile Include="Enemyes\IEnemy.cs" />
     <Compile Include="Enemyes\Wave.cs" />
@@ -50,7 +50,7 @@
     <Compile Include="Interface\IIsDead.cs" />
     <Compile Include="Interface\ISetWaypoints.cs" />
     <Compile Include="Map\Level.cs" />
-    <Compile Include="Player\Player.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprite.cs" />

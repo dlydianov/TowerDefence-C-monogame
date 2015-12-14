@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow pressed.png</SourceFile>
-  <SourceTime>2015-12-14T14:39:02.565734+02:00</SourceTime>
-  <DestFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Slow Tower/slow pressed.xnb</DestFile>
-  <DestTime>2015-12-14T14:40:25.6721539+02:00</DestTime>
+  <SourceFile>C:/Users/Magi/Desktop/TeamWork/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow pressed.png</SourceFile>
+  <SourceTime>2015-12-14T17:29:19.740396+02:00</SourceTime>
+  <DestFile>C:/Users/Magi/Desktop/TeamWork/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Slow Tower/slow pressed.xnb</DestFile>
+  <DestTime>2015-12-14T17:30:04.0869325+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

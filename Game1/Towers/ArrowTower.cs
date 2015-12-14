@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.BulletMain;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Towers
@@ -20,7 +21,7 @@ namespace Game1.Towers
 
             if (bulletTimer >= 0.75f && target != null)
             {
-                Bullet.Bullet bullet = new Bullet.Bullet(bulletTexture, Vector2.Subtract(center,
+                Bullet bullet = new Bullet(bulletTexture, Vector2.Subtract(center,
                     new Vector2(bulletTexture.Width/2)), rotation, 6, damage);
 
                 bulletList.Add(bullet);
@@ -29,7 +30,7 @@ namespace Game1.Towers
 
             for (int i = 0; i < bulletList.Count; i++)
             {
-                Bullet.Bullet bullet = bulletList[i];
+                Bullet bullet = bulletList[i];
 
                 bullet.SetRotation(rotation);
                 bullet.Update(gameTime);

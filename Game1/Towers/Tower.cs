@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game1.BulletMain;
+using Game1.Enemyes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,12 +14,12 @@ namespace Game1.Towers
 
         protected float radius; // How far the tower can shoot
 
-        protected Enemy.Enemy target;
+        protected Enemy target;
 
         protected float bulletTimer; // How long ago was a bullet fired
         protected Texture2D bulletTexture;
 
-        protected List<Bullet.Bullet> bulletList = new List<Bullet.Bullet>();
+        protected List<Bullet> bulletList = new List<Bullet>();
 
         public int Cost
         {
@@ -33,7 +35,7 @@ namespace Game1.Towers
             get { return radius; }
         }
 
-        public Enemy.Enemy Target
+        public Enemy Target
         {
             get { return target; }
         }
@@ -63,12 +65,12 @@ namespace Game1.Towers
             return Vector2.Distance(center, position) <= radius;
         }
 
-        public virtual void GetClosestEnemy(List<Enemy.Enemy> enemies)
+        public virtual void GetClosestEnemy(List<Enemy> enemies)
         {
             target = null;
             float smallestRange = radius;
 
-            foreach (Enemy.Enemy enemy in enemies)
+            foreach (Enemy enemy in enemies)
             {
                 if (Vector2.Distance(center, enemy.Center) < smallestRange)
                 {
@@ -100,7 +102,7 @@ namespace Game1.Towers
         {
             base.Draw(spriteBatch);
 
-            foreach (Bullet.Bullet bullet in bulletList)
+            foreach (Bullet bullet in bulletList)
                 bullet.Draw(spriteBatch);
         }
     }
