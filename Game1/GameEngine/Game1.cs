@@ -73,9 +73,11 @@ namespace Game1
              background = Content.Load<Texture2D>("background");
             Texture2D grass = Content.Load<Texture2D>("grass");
             Texture2D path = Content.Load<Texture2D>("path");
+            Texture2D road = Content.Load<Texture2D>("road");
 
             level.AddTexture(grass);
             level.AddTexture(path);
+            level.AddTexture(road);
 
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
 

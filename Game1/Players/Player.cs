@@ -94,7 +94,7 @@ namespace Game1.Players
                 }
             }
 
-            bool onPath = (level.GetIndex(cellX, cellY) != 1);
+            bool onPath = (level.GetIndex(cellX, cellY) != 1 && level.GetIndex(cellX, cellY) != 2);
 
             return inBounds && spaceClear && onPath; // If both checks are true return true
         }

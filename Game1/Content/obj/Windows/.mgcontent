@@ -4,24 +4,25 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/enemy.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/arrow tower.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/bullet.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/tool bar.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow button.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow hover.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow pressed.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/spike tower.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike button.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike hover.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike pressed.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/slow tower.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow button.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow hover.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow pressed.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/grass.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/path.png</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/Cooper Black.spritefont</File>
-    <File>C:/Users/user1/Documents/Visual Studio 2015/Projects/TowerDefence-C-monogame/Game1/Content/background.jpg</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/enemy.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/arrow tower.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/bullet.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/tool bar.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow button.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow hover.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Arrow Tower/arrow pressed.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/spike tower.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike button.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike hover.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike pressed.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/slow tower.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow button.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow hover.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Slow Tower/slow pressed.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/grass.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/path.png</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/Cooper Black.spritefont</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/background.jpg</File>
+    <File>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/road.png</File>
   </SourceFiles>
 </SourceFileCollection>
