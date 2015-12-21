@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Towers
 {
-    public class Tower : Sprite
+    public abstract class  Tower : Sprite
     {
         protected int cost; // How much will the tower cost to make
         protected int damage; // The damage done to enemy's
@@ -20,6 +20,12 @@ namespace Game1.Towers
         protected Texture2D bulletTexture;
 
         protected List<Bullet> bulletList = new List<Bullet>();
+
+        protected Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
+           : base(texture, position)
+        {
+            this.bulletTexture = bulletTexture;
+        }
 
         public int Cost
         {
@@ -46,11 +52,7 @@ namespace Game1.Towers
             get { return target != null; }
         }
 
-        public Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
-            : base(texture, position)
-        {
-            this.bulletTexture = bulletTexture;
-        }
+       
 
         protected void FaceTarget()
         {

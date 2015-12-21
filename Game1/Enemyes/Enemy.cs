@@ -20,9 +20,18 @@ namespace Game1.Enemyes
 
         protected bool alive = true;
 
-        protected float speed = 0.5f;
+        protected  float speed = 0.5f;
         protected int bountyGiven;
 
+        public Enemy(Texture2D texture, Vector2 position, float health, int bountyGiven, float speed)
+           : base(texture, position)
+        {
+            this.startHealth = health;
+            this.currentHealth = startHealth;
+
+            this.bountyGiven = bountyGiven;
+            this.speed = speed;
+        }
         /// <summary>
         /// Alters the speed of the enemy.
         /// </summary>
@@ -64,15 +73,7 @@ namespace Game1.Enemyes
             get { return Vector2.Distance(position, waypoints.Peek()); }
         }
 
-        public Enemy(Texture2D texture, Vector2 position, float health, int bountyGiven, float speed)
-            : base(texture, position)
-        {
-            this.startHealth = health;
-            this.currentHealth = startHealth;
-
-            this.bountyGiven = bountyGiven;
-            this.speed = speed;
-        }
+       
 
         public void SetWaypoints(Queue<Vector2> waypoints)
         {

@@ -110,10 +110,14 @@ namespace Game1
 
                     if (textureIndex == -1)
                         continue;
+                    if (textureIndex != 0)
+                    {
+                        Texture2D texture = tileTextures[textureIndex];
+                        batch.Draw(texture, new Rectangle(x * 32, y * 32, 32, 32), Color.White);
+                    }
+                    
 
-                    Texture2D texture = tileTextures[textureIndex];
-
-                    batch.Draw(texture, new Rectangle(x * 32, y * 32, 32, 32), Color.White);
+                    
                 }
             }
         }

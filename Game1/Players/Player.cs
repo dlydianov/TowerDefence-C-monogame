@@ -10,7 +10,7 @@ namespace Game1.Players
     public class Player
     {
         // Player state.
-        private int money = 50;
+        private int money =100;
         private int lives = 30;
 
         // The textures used to draw our tower.

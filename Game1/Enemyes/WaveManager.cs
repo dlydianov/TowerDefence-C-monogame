@@ -41,8 +41,8 @@ namespace Game1.Enemyes
 
             for (int i = 0; i < numberOfWaves; i++)
             {
-                int initialNumerOfEnemies = 6;
-                int numberModifier = (i / 6) + 1;
+                int initialNumerOfEnemies =20;
+                int numberModifier = (i / 20) + 1;
 
                 // Pass the reference to the player, to the wave class.
                 Wave wave = new Wave(i, initialNumerOfEnemies *
@@ -79,7 +79,7 @@ namespace Game1.Enemyes
                 timeSinceLastWave += (float)gameTime.ElapsedGameTime.TotalSeconds; // Start the timer
             }
 
-            if (timeSinceLastWave > 30.0f) // If 30 seconds has passed
+            if (timeSinceLastWave > 5.0f) // If 30 seconds has passed
             {
                 waves.Dequeue(); // Remove the finished wave
                 StartNextWave(); // Start the next wave

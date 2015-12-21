@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Game1.Enemyes;
 using Game1.GUI;
 using Game1.Players;
@@ -13,6 +14,7 @@ namespace Game1
     /// </summary>
     public class Game1 : Game
     {
+        Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -68,7 +70,7 @@ namespace Game1
             SpriteFont font = Content.Load<SpriteFont>("Cooper Black");
 
             toolBar = new Toolbar(topBar, font, new Vector2(0, level.Height * 32));
-
+             background = Content.Load<Texture2D>("background");
             Texture2D grass = Content.Load<Texture2D>("grass");
             Texture2D path = Content.Load<Texture2D>("path");
 
@@ -192,7 +194,7 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-
+            spriteBatch.Draw(background, new Vector2(0,0), Color.White);
             level.Draw(spriteBatch);
             player.Draw(spriteBatch);
             waveManager.Draw(spriteBatch);
