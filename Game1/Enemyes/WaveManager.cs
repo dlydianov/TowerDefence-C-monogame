@@ -19,19 +19,6 @@ namespace Game1.Enemyes
 
         private Level level; // A reference to our level class.
 
-        public Wave CurrentWave // Get the wave at the front of the queue
-        {
-            get { return waves.Peek(); }
-        }
-        public List<Enemy> Enemies // Get a list of the current enemeies
-        {
-            get { return CurrentWave.Enemies; }
-        }
-        public int Round // Returns the wave number
-        {
-            get { return CurrentWave.RoundNumber + 1; }
-        }
-
         public WaveManager(Player player, Level level, int numberOfWaves, Texture2D enemyTexture)
         {
             this.numberOfWaves = numberOfWaves;
@@ -52,6 +39,19 @@ namespace Game1.Enemyes
             }
 
             StartNextWave();
+        }
+
+        public Wave CurrentWave // Get the wave at the front of the queue
+        {
+            get { return waves.Peek(); }
+        }
+        public List<Enemy> Enemies // Get a list of the current enemeies
+        {
+            get { return CurrentWave.Enemies; }
+        }
+        public int Round // Returns the wave number
+        {
+            get { return CurrentWave.RoundNumber + 1; }
         }
 
         private void StartNextWave()

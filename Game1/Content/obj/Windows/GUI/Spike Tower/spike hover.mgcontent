@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Magi/Desktop/Soft Uni/Foundamentals/OOP/TeamWork/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike hover.png</SourceFile>
-  <SourceTime>2015-12-22T11:09:02.6945658+02:00</SourceTime>
-  <DestFile>C:/Users/Magi/Desktop/Soft Uni/Foundamentals/OOP/TeamWork/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Spike Tower/spike hover.xnb</DestFile>
-  <DestTime>2015-12-22T11:09:22.3766916+02:00</DestTime>
+  <SourceFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/GUI/Spike Tower/spike hover.png</SourceFile>
+  <SourceTime>2015-12-22T11:19:11.3139098+02:00</SourceTime>
+  <DestFile>E:/SoftUni/Object-Oriented-Programming/TeamProject/TowerDefence-C-monogame/Game1/Content/bin/Windows/GUI/Spike Tower/spike hover.xnb</DestFile>
+  <DestTime>2015-12-22T11:19:37.2952236+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

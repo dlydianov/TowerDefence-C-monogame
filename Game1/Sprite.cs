@@ -16,13 +16,6 @@ namespace Game1
 
         protected float rotation;
 
-       
-        public Vector2 Center
-        {
-            get { return center; }
-        }
-
-
         protected Sprite(Texture2D tex, Vector2 pos)
         {         
             texture = tex;
@@ -34,6 +27,13 @@ namespace Game1
                 2, position.Y + texture.Height / 2);
             origin = new Vector2(texture.Width / 2, texture.Height / 2);
         }
+       
+        public Vector2 Center
+        {
+            get { return center; }
+        }
+
+
 
         public virtual void Update(GameTime gameTime)
         {

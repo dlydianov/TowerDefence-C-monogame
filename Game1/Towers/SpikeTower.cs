@@ -16,12 +16,6 @@ namespace Game1.Towers
         // All the enimes that are in range of the tower.
         private List<Enemy> targets = new List<Enemy>();
 
-        public override bool HasTarget
-        {
-            // The tower will never have just one target.
-            get { return false; }
-        }
-
         /// <summary>
         /// Constructs a new Spike Tower object.
         /// </summary>
@@ -46,6 +40,12 @@ namespace Game1.Towers
                 new Vector2( 1,  1), // South East
             };
         }
+        public override bool HasTarget
+        {
+            // The tower will never have just one target.
+            get { return false; }
+        }
+
 
         public override void GetClosestEnemy(List<Enemy> enemies)
         {

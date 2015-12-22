@@ -10,7 +10,7 @@ namespace Game1.Players
     public class Player
     {
         // Player state.
-        private int money =100;
+        private int money = 100;
         private int lives = 30;
 
         // The textures used to draw our tower.
@@ -41,6 +41,16 @@ namespace Game1.Players
         // A reference to the level.
         private Level level;
 
+        /// <summary>
+        /// Construct a new player.
+        /// </summary>
+        public Player(Level level, Texture2D[] towerTextures, Texture2D bulletTexture)
+        {
+            this.level = level;
+
+            this.towerTextures = towerTextures;
+            this.bulletTexture = bulletTexture;
+        }
         public int Money
         {
             get { return money; }
@@ -61,16 +71,6 @@ namespace Game1.Players
             set { newTowerIndex = value; }
         }
 
-        /// <summary>
-        /// Construct a new player.
-        /// </summary>
-        public Player(Level level, Texture2D[] towerTextures, Texture2D bulletTexture)
-        {
-            this.level = level;
-
-            this.towerTextures = towerTextures;
-            this.bulletTexture = bulletTexture;
-        }
 
         /// <summary>
         /// Returns wether the current cell is clear

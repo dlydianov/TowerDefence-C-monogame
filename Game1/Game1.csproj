@@ -40,13 +40,13 @@
   <ItemGroup>
     <Compile Include="BulletMain\Bullet.cs" />
     <Compile Include="Enemyes\Enemy.cs" />
-    <Compile Include="Enemyes\IEnemy.cs" />
+    <Compile Include="Interface\IEnemy.cs" />
     <Compile Include="Enemyes\Wave.cs" />
     <Compile Include="Enemyes\WaveManager.cs" />
     <Compile Include="GameEngine\Game1.cs" />
     <Compile Include="GUI\Button.cs" />
-    <Compile Include="GUI\ButtonsStatus.cs" />
-    <Compile Include="GUI\Toolbar.cs" />
+    <Compile Include="Enumerables\ButtonsStatus.cs" />
+    <Compile Include="Enumerables\Toolbar.cs" />
     <Compile Include="Interface\IIsDead.cs" />
     <Compile Include="Interface\ISetWaypoints.cs" />
     <Compile Include="Map\Level.cs" />
@@ -73,7 +73,9 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
