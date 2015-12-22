@@ -16,16 +16,30 @@ namespace Game1.Towers
         // All the enimes that are in range of the tower.
         private List<Enemy> targets = new List<Enemy>();
 
+<<<<<<< HEAD
+=======
+        private const int sprikeTowerDamage = 20;// Set the damage.
+        private const int sprikeTowerCost = 40; // Set the initial cost.
+        private const int sprikeRadius = 48; // Set the radius.
+        private const float sprikeTowerBulletTime = 1.0f;
+
+        public override bool HasTarget
+        {
+            // The tower will never have just one target.
+            get { return false; }
+        }
+
+>>>>>>> 5b87b44447c9f79eecfe82123938a140b4b9187c
         /// <summary>
         /// Constructs a new Spike Tower object.
         /// </summary>
         public SpikeTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, bulletTexture, position)
         {
-            this.damage = 20; // Set the damage.
-            this.cost = 40;   // Set the initial cost.
+            this.damage = sprikeTowerDamage; 
+            this.cost = sprikeTowerCost;   
 
-            this.radius = 48; // Set the radius.
+            this.radius = sprikeRadius; 
 
             // Store a list of all the directions the tower can shoot.
             directions = new Vector2[]
@@ -69,7 +83,7 @@ namespace Game1.Towers
             base.Update(gameTime);
 
             // Decide if it is time to shoot.
-            if (bulletTimer >= 1.0f && targets.Count != 0)
+            if (bulletTimer >= sprikeTowerBulletTime && targets.Count != 0)
             {
                 // For every direction the tower can shoot,
                 for (int i = 0; i < directions.Length; i++)

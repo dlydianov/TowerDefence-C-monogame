@@ -14,24 +14,32 @@ namespace Game1.Towers
         private float speedModifier;
         // Defines how long this effect will last.
         private float modifierDuration;
+        private const int slowTowerDamage = 5; // Set the damage
+        private const int slowTowerCost = 25;   // Set the initial cost
+
+        private const int slowTowerRadius = 80; // Set the radius
+        private const float slowTowerSpeedModifier = 0.6f;
+        private const float slowTowerModifierDuration = 2.0f;
+        private const float slowTowerBulletTime = 2.75f;
+       
 
         public SlowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, bulletTexture, position)
         {
-            this.damage = 5; // Set the damage
-            this.cost = 25;   // Set the initial cost
+            this.damage = slowTowerDamage; 
+            this.cost = slowTowerCost;  
 
-            this.radius = 80; // Set the radius
+            this.radius = slowTowerRadius; 
 
-            this.speedModifier = 0.6f;
-            this.modifierDuration = 2.0f;
+            this.speedModifier = slowTowerSpeedModifier;
+            this.modifierDuration = slowTowerModifierDuration;
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
-            if (bulletTimer >= 2.75f && target != null)
+            if (bulletTimer >= slowTowerBulletTime && target != null)
             {
                 Bullet bullet = new Bullet(bulletTexture, Vector2.Subtract(center,
                     new Vector2(bulletTexture.Width / 2)), rotation, 6, damage);

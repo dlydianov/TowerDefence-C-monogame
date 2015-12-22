@@ -6,13 +6,18 @@ namespace Game1.Towers
 {
     public class ArrowTower : Tower
     {
+
+        private const int arrowTowerDamage = 15;  // Set the damage
+        private const int arrowTowerCoast = 15; // Set the initial cost
+        private const int arrowTowerRadius = 80;  // Set the radius
+
         public ArrowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
             : base(texture, bulletTexture, position)
         {
-            this.damage = 15; // Set the damage
-            this.cost = 15; // Set the initial cost
+            this.damage = arrowTowerDamage; 
+            this.cost = arrowTowerCoast; 
 
-            this.radius = 80; // Set the radius
+            this.radius = arrowTowerRadius;
         }
 
         public override void Update(GameTime gameTime)
